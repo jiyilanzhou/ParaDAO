@@ -1,7 +1,7 @@
 use primitives::{ed25519, sr25519, Pair};
 use paradao_runtime::{
 	AccountId, GenesisConfig, ConsensusConfig, TimestampConfig, BalancesConfig,
-	SudoConfig, IndicesConfig,
+	SudoConfig, IndicesConfig, DaoModuleConfig,
 };
 use substrate_service;
 
@@ -114,6 +114,12 @@ fn testnet_genesis(initial_authorities: Vec<AuthorityId>, endowed_accounts: Vec<
 		}),
 		sudo: Some(SudoConfig {
 			key: root_key,
+		}),
+		dao: Some(DaoModuleConfig {
+			period_duration: 180,
+			voting_period_length: 3,
+			abort_window: 1,
+			proposal_mortgage: 1000000000000000,
 		}),
 	}
 }
