@@ -1,5 +1,7 @@
 # paradao
 
+ParaDAO-forntend:  <https://github.com/polkaworld-org/ParaDAO-frontend>
+
 A new SRML-based Substrate node, ready for hacking.
 
 # Building
